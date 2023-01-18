@@ -7,7 +7,7 @@ module.exports = {
   },
   devServer: {
     static: '/dist',
-    watchFiles: ["src/*.html"],
+    watchFiles: ['src/*.html'],
     hot: true,
   },
   plugins: [
@@ -32,5 +32,5 @@ module.exports = {
   optimization: {
     runtimeChunk: 'single',
   },
-  mode: "development",
+  mode: 'development',
 };

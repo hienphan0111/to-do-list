@@ -4,7 +4,7 @@
 }
 
 .main-list {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   max-width: 640px;
   margin: 20px auto;
 }
@@ -38,13 +38,13 @@
   font-style: italic;
 }
 
-.add-new > i {
-  transform: rotate(90deg);
-}
-
 i {
   font-weight: 200;
-  color:rgba(0, 0, 0, 0.24);
+  color: rgba(0, 0, 0, 0.24);
+}
+
+.add-new > i {
+  transform: rotate(90deg);
 }
 
 #clear-completed {

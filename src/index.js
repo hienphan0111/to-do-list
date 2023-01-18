@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import './style.css';
 
 const toDoTasks = [
@@ -15,7 +14,7 @@ const toDoTasks = [
 ];
 
 const toDoContainer = document.querySelector('.to-do-container');
-toDoTasks.forEach(item => {
+toDoTasks.forEach((item) => {
   const { description, index } = item;
   const toDoItem = document.createElement('li');
   toDoItem.classList.add('row');
