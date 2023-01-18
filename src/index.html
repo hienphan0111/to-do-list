@@ -5,9 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://kit.fontawesome.com/a329405765.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>To do list</h1>
+  <div class="main-list">
+    <div class="h-list row">
+      <h3>Today's To Do</h3>
+      <i class="fa-solid fa-arrows-rotate"></i>
+    </div>
+    <div class="add-new row">
+      <input type="text" id="add-new" placeholder="Add to your list...">
+      <i class="fa-solid fa-turn-down"></i>
+    </div>
+    
+    <ul class="to-do-container">
+      
+    </ul>
+    <button id="clear-completed">Clear all completed</button>
+  </div>
   <script src="./index.js"></script>
 </body>
 </html>

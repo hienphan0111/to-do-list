@@ -7,9 +7,12 @@ module.exports = {
   },
   devServer: {
     static: '/dist',
+    watchFiles: ['src/*.html'],
+    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: './src/index.html',
     }),
   ],
@@ -29,5 +32,5 @@ module.exports = {
   optimization: {
     runtimeChunk: 'single',
   },
-  mode: "development",
+  mode: 'development',
 };

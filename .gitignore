@@ -103,9 +103,9 @@ dist
 # TernJS port file
 .tern-port
 
-package.json
+#package.json
 .stylelintrc.json
-package-lock.json
+#package-lock.json
 
 #archive old css file
 style_old.css
