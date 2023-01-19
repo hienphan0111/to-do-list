@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 .main-list {
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   max-width: 640px;
@@ -51,4 +55,16 @@ i {
   border: none;
   width: 100%;
   padding: 20px;
+}
+
+#addBtn {
+  cursor: pointer;
+}
+
+.icon-task {
+  cursor: move;
+}
+
+.ip-task::placeholder {
+  color: #000;
 }
