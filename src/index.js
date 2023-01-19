@@ -31,7 +31,7 @@ if (toDoTasks !== null) {
 const inputTask = document.getElementById('add-new');
 const addTask = document.getElementById('addBtn');
 addTask.addEventListener('click', () => {
-  if(inputTask.value !== '') {
+  if (inputTask.value !== '') {
     const task = {
       description: inputTask.value,
       completed: false,
@@ -46,11 +46,11 @@ addTask.addEventListener('click', () => {
 
 const iconTask = document.querySelectorAll('.icon-task');
 const dlState = [];
-iconTask.forEach((item,i) => {
+iconTask.forEach((item, i) => {
   dlState.push({
     index: item.id,
     state: false,
-  })
+  });
   item.addEventListener('click', () => {
     const lbTask = document.querySelectorAll('.lb-task');
     const ipTask = document.querySelectorAll('.ip-task');
@@ -61,18 +61,18 @@ iconTask.forEach((item,i) => {
       item.innerHTML = '<i class="fa-regular fa-trash-can"></i>';
       iState.state = true;
       dlState.forEach((e, index) => {
-        if  (e.index !== item.id) {
+        if (e.index !== item.id) {
           e.state = false;
           iconTask[index].innerHTML = '<i class="fa-solid fa-ellipsis-vertical dot"></i>';
-          iconTask[index].parentElement.style.backgroundColor = "#fff";
+          iconTask[index].parentElement.style.backgroundColor = '#fff';
           ipTask[index].classList.add('hidden');
           lbTask[index].classList.remove('hidden');
         }
       });
-      item.parentElement.style.backgroundColor = "#f9e9d6";
+      item.parentElement.style.backgroundColor = '#f9e9d6';
     } else {
-      remove(parseInt(item.id));
+      remove(parseInt(item.id, 10));
       window.location.reload();
     }
   });
-})
+});
