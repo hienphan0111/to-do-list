@@ -55,7 +55,6 @@ iconTask.forEach((item, i) => {
     const lbTask = document.querySelectorAll('.lb-task');
     const ipTask = document.querySelectorAll('.ip-task');
     lbTask[i].classList.add('hidden');
-    console.log(lbTask[i]);
     ipTask[i].classList.remove('hidden');
     const iState = dlState.find((el) => el.index === item.id);
     if (!iState.state) {
@@ -84,6 +83,6 @@ if (ipTask !== null) {
     el.addEventListener('change', () => {
       modify(el.value, index);
       window.location.reload();
-    })
-  })
+    });
+  });
 }
