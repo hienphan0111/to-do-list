@@ -19,4 +19,10 @@ const remove = (taskIndex) => {
   localStorage.setItem('toDoList', JSON.stringify(tasks));
 };
 
-export { add, remove };
+const modify = (description, index) => {
+  const tasks = JSON.parse(localStorage.getItem('toDoList'));
+  tasks[index].description = description;
+  localStorage.setItem('toDoList', JSON.stringify(tasks));
+};
+
+export { add, remove, modify };

@@ -1,5 +1,5 @@
 import './style.css';
-import { add, remove } from './toDoTasks.js';
+import { add, remove, modify } from './toDoTasks.js';
 
 let toDoTasks = JSON.parse(localStorage.getItem('toDoList'));
 
@@ -11,9 +11,9 @@ if (toDoTasks !== null) {
     toDoItem.classList.add('row');
     const temp = `
       <div class="meta">
-        <input type="checkbox" id="input-${index}">
-        <label for=${index} class="lb-task">${description}</label>
-        <input type="text" class="ip-task hidden" placeholder=${description}>
+        <input type="checkbox" id="ip-${index}">
+        <label for="ip-${index}" class="lb-task">${description}</label>
+        <input type="text" class="ip-task hidden" value="${description}">
       </div>
       <div class="icon-task" id=${index}>
         <i class="fa-solid fa-ellipsis-vertical dot"></i>
@@ -55,6 +55,7 @@ iconTask.forEach((item, i) => {
     const lbTask = document.querySelectorAll('.lb-task');
     const ipTask = document.querySelectorAll('.ip-task');
     lbTask[i].classList.add('hidden');
+    console.log(lbTask[i]);
     ipTask[i].classList.remove('hidden');
     const iState = dlState.find((el) => el.index === item.id);
     if (!iState.state) {
@@ -76,3 +77,13 @@ iconTask.forEach((item, i) => {
     }
   });
 });
+
+const ipTask = document.querySelectorAll('.ip-task');
+if (ipTask !== null) {
+  ipTask.forEach((el, index) => {
+    el.addEventListener('change', () => {
+      modify(el.value, index);
+      window.location.reload();
+    })
+  })
+}
