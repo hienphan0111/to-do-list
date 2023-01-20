@@ -1,6 +1,6 @@
 import './style.css';
 import { add, remove, modify } from './toDoTasks.js';
-import { updateStatusTask, clearAllCompleted } from './statusTask';
+import { updateStatusTask, clearAllCompleted } from './statusTask.js';
 
 let toDoTasks = JSON.parse(localStorage.getItem('toDoList'));
 
@@ -95,7 +95,7 @@ cbTask.forEach((e, i) => {
   let st = false;
   const lbTask = document.querySelectorAll('.lb-task');
   e.addEventListener('change', () => {
-    if  (e.checked) {
+    if (e.checked) {
       st = true;
       updateStatusTask(st, i);
       lbTask[i].classList.add('strike');
