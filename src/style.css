@@ -53,6 +53,7 @@ i {
 
 #clear-completed {
   border: none;
+  cursor: pointer;
   width: 100%;
   padding: 20px;
 }
@@ -67,4 +68,8 @@ i {
 
 .ip-task::placeholder {
   color: #000;
+}
+
+.strike {
+  text-decoration: line-through;
 }

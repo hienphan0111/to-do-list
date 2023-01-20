@@ -1,5 +1,6 @@
 import './style.css';
 import { add, remove, modify } from './toDoTasks.js';
+import { updateStatusTask, clearAllCompleted } from './statusTask';
 
 let toDoTasks = JSON.parse(localStorage.getItem('toDoList'));
 
@@ -11,7 +12,7 @@ if (toDoTasks !== null) {
     toDoItem.classList.add('row');
     const temp = `
       <div class="meta">
-        <input type="checkbox" id="ip-${index}">
+        <input type="checkbox" id="ip-${index}" class="cb-task">
         <label for="ip-${index}" class="lb-task">${description}</label>
         <input type="text" class="ip-task hidden" value="${description}">
       </div>
@@ -86,3 +87,31 @@ if (ipTask !== null) {
     });
   });
 }
+
+// Update status task
+
+const cbTask = document.querySelectorAll('.cb-task');
+cbTask.forEach((e, i) => {
+  let st = false;
+  const lbTask = document.querySelectorAll('.lb-task');
+  e.addEventListener('change', () => {
+    if  (e.checked) {
+      st = true;
+      updateStatusTask(st, i);
+      lbTask[i].classList.add('strike');
+    } else {
+      st = false;
+      updateStatusTask(st, i);
+      lbTask[i].classList.remove('strike');
+    }
+  });
+});
+
+// Clear completed task
+
+const btnClear = document.getElementById('clear-completed');
+
+btnClear.addEventListener('click', () => {
+  clearAllCompleted();
+  window.location.reload();
+});
